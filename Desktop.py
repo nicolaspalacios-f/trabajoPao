@@ -2,12 +2,16 @@ import sys
 import pandas as pd
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-
+from datetime import date 
 from tkinter import *
-  
-
 from tkinter import filedialog  
+
+
+
+
 filename = ""
+
+
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
                                           title = "Elegir Archivo",
@@ -20,20 +24,25 @@ def browseFiles():
 
 def generateFile(filename):
     file = pd.read_excel(filename)
+    file = file.fillna(0)
     file = file.drop(file.columns[0],axis=1)
+    file['Fecha de agendamiento'] = pd.to_datetime(file['Fecha de agendamiento'])
+    file['Fecha de agendamiento'] = file['Fecha de agendamiento'].dt.date
     columnas = file.columns.tolist()
-    for persona in file:
+    for i in range(len(file.index)):
         atributoPersona = {}
-        for atributo in file[persona]:
-            
-            if atributo == "NaN":
+        for cliente in file:
+            atributo = (file[cliente][i])  
+            if  type(atributo) == date:
+                atributo = str(atributo)
+            else:
+                atributo = (file[cliente][i])    
+            if atributo == 0:
                 pass
             else:
-                print(file[persona]+ ":" +atributo)
-                ##atributoPersona[file[persona]] = atributo
-                pass
-        
-
+                atributoPersona[cliente] = atributo
+                
+    
 
 class My_Window(QMainWindow):
     filename = ""
@@ -70,7 +79,9 @@ class My_Window(QMainWindow):
 
     def btn_generate_clicked(self):
         filename = self.getFilename()
+        filename = "C:\\Users\\pala\\Desktop\\trabajoPao\\prueba forms.xlsx"
         if filename != "":
+            
             generateFile(filename)
         else:
             msg = QMessageBox()
