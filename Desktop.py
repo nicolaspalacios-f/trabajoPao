@@ -5,12 +5,21 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from datetime import date 
 from tkinter import *
 from tkinter import filedialog  
-
+import jinja2
+import pdfkit
 
 
 
 filename = ""
 
+tipoDeEvaluacion = "hola"
+context = {'tipoDeEvaluacion': tipoDeEvaluacion}
+loader = jinja2.FileSystemLoader('./')
+enviroment = jinja2.Environment(loader=loader)
+template = enviroment.get_template('plantilla.html')
+output = template.render(context)
+config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+pdfkit.from_string(output, 'out.pdf', configuration=config)
 
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
@@ -28,7 +37,6 @@ def generateFile(filename):
     file = file.drop(file.columns[0],axis=1)
     file['Fecha de agendamiento'] = pd.to_datetime(file['Fecha de agendamiento'])
     file['Fecha de agendamiento'] = file['Fecha de agendamiento'].dt.date
-    columnas = file.columns.tolist()
     for i in range(len(file.index)):
         atributoPersona = {}
         for cliente in file:
@@ -41,9 +49,17 @@ def generateFile(filename):
                 pass
             else:
                 atributoPersona[cliente] = atributo
+        htmlGenerator(atributoPersona)
                 
     
+def htmlGenerator(datos):
+    contexto = {}    
 
+    for key in datos:
+        for dato in datos[key]:
+            print(dato)
+            ##contexto[key] = atributo
+        
 class My_Window(QMainWindow):
     filename = ""
     def getFilename(self):
