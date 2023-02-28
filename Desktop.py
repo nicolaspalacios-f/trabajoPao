@@ -11,15 +11,14 @@ import pdfkit
 
 
 filename = ""
-
-tipoDeEvaluacion = "hola"
-context = {'tipoDeEvaluacion': tipoDeEvaluacion}
-loader = jinja2.FileSystemLoader('./')
-enviroment = jinja2.Environment(loader=loader)
-template = enviroment.get_template('plantilla.html')
-output = template.render(context)
-config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
-pdfkit.from_string(output, 'out.pdf', configuration=config)
+def generatepdf(contexto, filename):
+    context = {'html': contexto}
+    loader = jinja2.FileSystemLoader('./')
+    enviroment = jinja2.Environment(loader=loader)
+    template = enviroment.get_template('plantilla.html')
+    output = template.render(context)
+    config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    pdfkit.from_string(output, str(filename) + '.pdf', configuration=config)
 
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
@@ -49,15 +48,24 @@ def generateFile(filename):
                 pass
             else:
                 atributoPersona[cliente] = atributo
-        htmlGenerator(atributoPersona)
+        contexto = htmlGenerator(atributoPersona)
+        generatepdf(contexto[0], contexto[1])
                 
     
-def htmlGenerator(datos):
-    contexto = {}    
-
+def htmlGenerator(datos): 
+    html = ""
+    nombre = list(datos.values())[2]
     for key in datos:
-        for dato in datos[key]:
-            print(dato)
+        if "," in str(datos[key]):
+            html += "<tr><br><td>" + str(key) + "</td><td>"
+            split= datos[key].split(",")
+            for element in split:
+                html += element + "<br>"
+            html += "</td></tr>"
+        else:
+            html += "<tr><td>" + str(key) + "</td><td>" + str(datos[key]) + "</td></tr>"
+    rta = [html, nombre]
+    return(rta)
             ##contexto[key] = atributo
         
 class My_Window(QMainWindow):
@@ -95,7 +103,7 @@ class My_Window(QMainWindow):
 
     def btn_generate_clicked(self):
         filename = self.getFilename()
-        filename = "C:\\Users\\pala\\Desktop\\trabajoPao\\prueba forms.xlsx"
+        filename = "C:\\Users\\nicolas\\Desktop\\Trabajo\\Pao\\prueba forms.xlsx"
         if filename != "":
             
             generateFile(filename)

@@ -2,34 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Service Order</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-      }
-      h1 {
-        font-size: 24px;
-        margin-top: 20px;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-      }
-      table th,
-      table td {
-        padding: 10px;
-        border: 1px solid #ccc;
-      }
-      table th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-      }
-    </style>
+    <title>Orden de servicio</title>
   </head>
   <body>
-    <h1>Service Order</h1>
+    <div><h1>Orden de servicio</h1></div>
+    <div>
+      <img
+        src="https://inprosalud.com.co/public_html/inprosalud.com.co/wp-content/uploads/2022/01/Inprosalud-IPS.jpg"
+      />
+    </div>
     <table>
       <thead>
         <tr>
@@ -38,84 +19,295 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{{tipoDeEvaluacion}}</td>
-          <td>
-            {{evaluacion}}
-          </td>
-        </tr>
-        <tr>
-          <td>{{enfasisEn}}</td>
-          <td>
-            {{enfasis1}} 
-          </td>
-        </tr>
-        <tr>
-          <td>{{conduccionPesv}}</td>
-          <td>{{examen1}}</td>
-        </tr>
-        <tr>
-          <td>{{examenComplementario}}</td>
-          <td>
-            {{complementario1}} <br />
-           
-          </td>
-        </tr>
-        <tr>
-          <td>{{laboratorios}}</td>
-          <td>
-            {{laboratorios1}} <br />
-            
-          </td>
-        </tr>
-        <tr>
-          <td>{{vacunacion}}</td>
-          <td>
-            {{vacuna1}} <br />
-            
-          </td>
-        </tr>
-        <tr>
-          <td>{{diagnosticas}}</td>
-          <td>
-            {{diagnosticas1}}
-            <br />
-           
-          </td>
-        </tr>
-        <tr>
-          <td>{{covid}}</td>
-          <td>
-            {{covid1}}<br />
-          </td>
-        </tr>
-        <tr>
-          <td>{{otros}}</td>
-          <td>
-            {{otros1}}<br />
-            <br />{{otros2}}<br />
-          </td>
-        </tr>
-        <tr>
-          <td>Datos del examen</td>
-          <td>
-            N. DE ELECTROCARDIOGRAMA <br /><br />
-            N. DE ESPIORIMETRIA <br /><br />N. DE CONSECUTIVO DE LABORATORIO
-            <br /><br />HORA DE LLEGADA <br /><br />HORA DE SALIDA
-          </td>
-        </tr>
-        <tr><td colspan="2" align="left"><br> Firma Del Empleador <br><br></td>
-        </tr>
-        <tr><td colspan="2" align="left"> <br>FIRMA Y SELLO DEL MEDICO <br><br></td>
-        </tr>
-        <tr><td colspan="2" align="left">
-         <br> FIRMA Y NUMERO DEL DOCUMENTO DEL TRABAJADOR'
-          <br>  <br>
-        </td></tr>
+        {{html}}
       </tbody>
-      <tfoot>
-        
-      </tfoot>
+      <tfoot></tfoot>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Datos del examen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>N. DE ELECTROCARDIOGRAMA</td>
+        </tr>
+        <tr>
+          <td>N. DE ESPIORIMETRIA</td>
+        </tr>
+        <tr>
+          <td>N. DE CONSECUTIVO DE LABORATORIO</td>
+        </tr>
+        <tr>
+          <td>HORA DE LLEGADA</td>
+        </tr>
+        <tr>
+          <td>HORA DE SALIDA</td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tr>
+        <td colspan="2" align="left">
+          <br />
+          Firma Del Empleador <br /><br />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">
+          <br />FIRMA Y SELLO DEL MEDICO <br /><br />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left">
+          <br />
+          FIRMA Y NUMERO DEL DOCUMENTO DEL TRABAJADOR' <br />
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" class="h6">
+          *La firma y el sello del médico son el registro de la terminación de
+          los exámenes médicos.
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" class="h6">
+          *El examen de retiro se realiza siempre y cuando el trabajador se
+          presente a la entidad medica indicada dentro de los plazos
+          establecidos por la ley (5 días hábiles a partir de su retiro)
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" class="h6">
+          *Sin excepción, toda persona debe presentar su cedula para que se le
+          practiquen los exámenes.
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="left" class="h6">
+          *Los exámenes médicos y paraclínicos realizados son de acuerdo a los
+          factores de riesgo a los cuales están expuestos, se aclara que ningún
+          examen se practica con el fin de evidenciar estado de gravidez.
+        </td>
+      </tr>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">Oficinas de atencion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Funza/ Cund</td>
+          <td>
+            kilometro 3,3 via funza siberia parque industrial santa lucia local
+            1 / 8219137
+          </td>
+          <td>L-V 6:30 am - 2:30 pm y S 6:30 am-10:00 am</td>
+          <td>crcfunza@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td>Madrid/ Cund</td>
+          <td>Calle. 7 # 1-78 Edificio San sebastian segundo piso</td>
+          <td>L-V 6:30 am - 2:30 pm y S 6:30 am-10:00 am</td>
+          <td>crcmadrid@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td>Neiva / Palermo</td>
+          <td>Cll 33 No. 5P-02 c   Tel: (8) 8712078</td>
+          <td>L-V 7am A 4:00 PM jornada continua</td>
+          <td>crcpalermo@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td>Medellin La Estrella</td>
+          <td>Calle 79B Sur # 50-130 Tel: 3044687946</td>
+          <td>L-V 7am-4pm y S 8am-10am</td>
+          <td>crclaestrella@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td>Ibague/ Tolima</td>
+          <td>Carrera 5 calle 60, Edifico Caminorte, La floresta</td>
+          <td>L-V 7am A 4:00 PM</td>
+          <td>crcibague@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td>Cartagena</td>
+          <td>
+            Barrio san pedro Mza 10 Lte 7 Sector Bomba el amparo Tel: ind 5:
+            6928659
+          </td>
+          <td>L-V 7:00 am - 3 pm y S 6:30 am-10:00 am</td>
+          <td>crccartagena@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td>Monteria</td>
+          <td>Cra 7 No 58 -30 Barrio la castellana Tel: (4)7897468</td>
+          <td>L-V 7:00 am - 3 pm y S 6:30 am-10:00 am</td>
+          <td>crcmonteria@inproslaud.com.co</td>
+        </tr>
+        <tr>
+          <td>Red nacional</td>
+          <td>
+            Agendamiento y llamar a el 7443330 o al celular 3102220704 o enviar
+            correo
+          </td>
+          <td>L-V 7am A 4:00 PM</td>
+          <td>ordenesdeservicio@inprosalud.com.co</td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            *Siempre se debe enviar a cada correo de la sede en atención con
+            copia a xiomara.jimenez@inprosalud.com.co
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">
+            CONDICIONES GENERALES DE PREPARACION PARA LA REALIZACION DE EXAMENES
+            DE LABORATORIO
+          </th>
+        </tr>
+        <tr>
+          <th colspan="4">EXAMENES DE LABORATORIO ( TOMA DE SANGRE)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>El dia anterior al examen:</th>
+          <th>La noche anterior al examen:</th>
+          <th>El dia del examen:</th>
+          <th>Recomendaciones en el momento del examen</th>
+        </tr>
+        <tr>
+          <td>*Comer sus comidas ordinarias o habituales</td>
+          <td>* Consumir su ultima comida entre las 7pm y 8pm</td>
+          <td>
+            Estar en la sede de Inprosalud en la hora indicada por su
+            empresa.(Para laboratorios debe estar antes de las 9:00 am )
+          </td>
+          <td>* Debe traer el tapabocas cubriendo de nariz a barbilla</td>
+        </tr>
+        <tr>
+          <td>* No tomar medicamentos innecesarios</td>
+          <td>* Tomar sólo los medicamentos prescritos por su médico</td>
+          <td>
+            No utilizar audifonos 2 horas antes de presentarse al examen
+            auditivo
+          </td>
+          <td>*Traer ropa comoda para la toma del examen fisico</td>
+        </tr>
+        <tr>
+          <td>* No ingerir Licor</td>
+
+          <td>* Evitar actividad física agotadora</td>
+          <td>
+            Traer al examen de visiometria u Optometria los lentes que utiliza
+          </td>
+          <td>
+            * Si el paciente tiene algún historial medico debe asistir con la
+            historia clinica completa para la atención.
+          </td>
+        </tr>
+        <tr>
+          <td>*Debe traer el tapabocas cubriendo de nariz a barbilla</td>
+          <td>*Traer su propio esfero</td>
+          <td>*Traer ropa comoda</td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th colspan="4">
+            * Ayuno entre 10-12 horas ( Según el tipo de examen a realizarse)
+          </th>
+        </tr>
+      </tbody>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">
+              EXAMENES PARA MANIPULACION DE ALIMENTOS ( KOH - FROTIS FARINGEO Y
+              COPROLOGICO )
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KOH</td>
+            <td>
+              * Presentarse sin esmalte en las uñas - abstenerse de tratamiento
+              anti nicótico 10 días previos al estudio
+            </td>
+          </tr>
+          <tr>
+            <td>COPROLÓGICO</td>
+            <td>
+              * Recoger material fecal en un recipiente limpio y seco, sin
+              mezclar con orina, coloque una porcion del tamaño de una nuez
+              dentro del recipiente que lo pueda conseguir en la drogueria, no
+              se aceptan otros recipientes.
+            </td>
+          </tr>
+          <tr>
+            <td>FROTIS FARINGEO</td>
+            <td>
+              * Venir al laboratorio en completo ayuno , No usar enjuague bucal
+              el dia de la toma de la muestra.
+            </td>
+          </tr>
+          <tr>
+            <td>DROGAS DE ABUSO</td>
+
+            <td>
+              * Para esta muestra el trabajador debe recoger la muestra de orina
+              en nuestras sedes, es un recipiente estéril suminstrados por
+              nosotros y diligenciar el formato de cadena de custodia.<br />
+              * La toma se realiza bajo el acompañamiento y supervisión de la
+              persona encargada de la toma de muestras.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </table>
   </body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 30px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table th,
+    table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    img {
+      width: 33%;
+      align-self: left;
+    }
+    h4 {
+      text-align: center;
+    }
+    .h6 {
+      font-size: 10px;
+    }
+  </style>
 </html>
